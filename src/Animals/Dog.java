@@ -1,6 +1,6 @@
 package Animals;
 
-public class Dog extends Animal implements Moveable{
+public class Dog extends Animal implements Moveable {
     protected String breed;
     protected String name;
 

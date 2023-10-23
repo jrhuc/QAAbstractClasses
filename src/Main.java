@@ -10,13 +10,29 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<Animal> animals = new ArrayList<Animal>();
+
+        Fish fish = null;
         animals.add(new Fish(false,"clownfish"));
         animals.add(new Dog(true,"Labrador","Tommy"));
         animals.add(new Cat(false,"Sphinx","Bob"));
         animals.add(new Cat(true,"Maine Coon","Fluffy"));
-        for (Animal a:
-             animals) {
-            a.makeNoise();
+        animals.add(fish);
+
+        try {
+            for (Animal a :
+                    animals) {
+                a.makeNoise();
+            }
+        }
+        catch (NullPointerException n) {
+            System.out.println("Null object reached");
+
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        finally {
+            System.out.println("This will always execute");
         }
 
         List<Moveable> move = new ArrayList<Moveable>();
