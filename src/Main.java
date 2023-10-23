@@ -1,7 +1,6 @@
-import Animals.Animal;
-import Animals.Cat;
-import Animals.Dog;
-import Animals.Fish;
+import Animals.*;
+import Vehicles.Car;
+import Vehicles.Plane;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +17,15 @@ public class Main {
         for (Animal a:
              animals) {
             a.makeNoise();
+        }
+
+        List<Moveable> move = new ArrayList<Moveable>();
+        move.add(new Car());
+        move.add(new Plane());
+        move.add(new Dog(false,"Sphinx","Bob"));
+        for (Moveable a:
+                move) {
+            System.out.println(a.move());
         }
     }
 }

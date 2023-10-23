@@ -1,6 +1,6 @@
 package Animals;
 
-public class Dog extends Animal {
+public class Dog extends Animal implements Moveable{
     protected String breed;
     protected String name;
 
@@ -13,5 +13,10 @@ public class Dog extends Animal {
     @Override
     public void makeNoise() {
         System.out.println("Bark");
+    }
+
+    @Override
+    public String move() {
+        return "run";
     }
 }
